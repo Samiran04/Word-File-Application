@@ -1,3 +1,5 @@
+<div><a href="/">HOME</a></div>
+
 <form action="/notes/save/<%= locals.notes._id %>" method="POST">
     <textarea name="content" id="my-notes" cols="120" rows="30"><%= locals.notes.text %></textarea>
     <input type="submit" value="Save">

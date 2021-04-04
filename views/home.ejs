@@ -12,7 +12,14 @@
             <% } %>
         </header>
         <div>
-            <a href="/notes/get-notes">My Notes</a>
+            <% if(locals.user){ %>
+                <ul>
+                    <% for(note of user.notes){ %>
+                        <li><a href="/notes/get-notes/<%= note %>">My Notes</a></li>
+                    <% } %>
+                </ul>
+                <a href="/notes/create-new">Create New Notes</a>
+            <% } %>
         </div>
     </body>
 </html>

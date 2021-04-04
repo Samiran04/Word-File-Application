@@ -4,7 +4,7 @@ const User = require('../models/user');
 module.exports.notes = async function(req, res){
 
     try{
-        let notes = await Note.findOne({user: req.user._id});
+        let notes = await Note.findById(req.params.id);
 
         return res.render('my_notes',{
             notes: notes
@@ -21,6 +21,8 @@ module.exports.newNotes = async function(req, res){
         let user = await User.findByIdAndUpdate(req.user._id, {
             $push: {notes: notes}
         });
+
+        return res.redirect('back');
     }catch(err){
         console.log(err);
         return;
