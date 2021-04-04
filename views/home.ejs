@@ -3,6 +3,14 @@
         <title>HOME</title>
     </head>
     <body>
+        <header>
+            <% if(locals.user){ %>
+                <a href="/users/log-out">Log Out</a>
+            <% }else{ %>
+                <a href="/users/sign-up">Sign In</a>
+                <a href="/users/sign-in">Sign In</a>
+            <% } %>
+        </header>
         This is home page.
     </body>
 </html>

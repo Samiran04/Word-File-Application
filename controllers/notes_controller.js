@@ -1,5 +1,9 @@
 const Note = require('../models/note');
 
+module.exports.notes = function(req, res){
+    return res.render('my_notes');
+}
+
 module.exports.edit = async function(req, res){
 
     try{

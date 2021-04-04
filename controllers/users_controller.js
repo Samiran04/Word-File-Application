@@ -8,6 +8,11 @@ module.exports.signUp = function(req, res){
     return res.render('signUp');
 }
 
+module.exports.distroySession = function(req, res){
+    req.logout();
+    return res.redirect('/');
+}
+
 module.exports.create = async function(req, res){
 
     try{
