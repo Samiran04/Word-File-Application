@@ -12,7 +12,10 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
-    }
+    },
+    notes: [{
+        type: mongoose.Schema.Types.ObjectId
+    }]
 }, {timestamps: true});
 
 const User = mongoose.model('User', userSchema);
