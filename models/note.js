@@ -12,6 +12,10 @@ const noteSchema = new mongoose.Schema({
     },
     uploads: {
         type: String
+    },
+    name: {
+        type: String,
+        required: true
     }
 }, {timestamps: true});
 

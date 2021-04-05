@@ -15,10 +15,16 @@
             <% if(locals.user){ %>
                 <ul>
                     <% for(note of user.notes){ %>
-                        <li><a href="/notes/get-notes/<%= note %>">My Notes</a></li>
+                        <div>
+                            <li><a href="/notes/get-notes/<%= note._id %>"><%= note.name %></a></li>
+                            <a href="/notes/delete-notes/?id=<%= note._id %>&userId=<%= locals.user._id %>"><img height="20px" width="20px" class="delete-button" src="https://www.flaticon.com/svg/vstatic/svg/1214/1214428.svg?token=exp=1617638546~hmac=3329a13ecd1f11b1febb565368d8e69a" alt="Delete"></a>
+                        </div>
                     <% } %>
                 </ul>
-                <a href="/notes/create-new">Create New Notes</a>
+                <form action="/notes/create-new" method="POST">
+                    <input type="text" name="name">
+                    <input type="submit" value="Create New Note">
+                </form>
             <% } %>
         </div>
     </body>

@@ -6,7 +6,7 @@ module.exports.home = async function(req, res){
         let user
 
         if(req.user)
-            user = await User.findById(req.user._id);
+            user = await User.findById(req.user._id).populate('notes');
 
         return res.render('home', {
             user: user
